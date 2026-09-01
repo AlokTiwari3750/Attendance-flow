@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Attendance Flow</string>
+    <string name="title_activity_main">Attendance Flow</string>
+    <string name="package_name">com.orgaearth.attendance</string>
+    <string name="custom_url_scheme">com.orgaearth.attendance</string>
+</resources>
