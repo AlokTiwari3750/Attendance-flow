@@ -1,0 +1,24 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Config rules - Allow read and write so admin can set and employees can read the direct webAppUrl link
+    match /config/{configId} {
+      allow read, write: if true;
+    }
+
+    // Employees rules - Allow read for employee login search and write to register new employees
+    match /employees/{employeeId} {
+      allow read, write: if true;
+    }
+
+    // Logs rules - Allow read for listing and write for checking in/checking out
+    match /logs/{logId} {
+      allow read, write: if true;
+    }
+  }
+}

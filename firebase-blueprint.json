@@ -1,0 +1,71 @@
+{
+  "entities": {
+    "Config": {
+      "title": "Config",
+      "description": "Global settings for Google Spreadsheet and Apps Script URL integration",
+      "type": "object",
+      "properties": {
+        "spreadsheetId": {
+          "type": "string",
+          "description": "Google Spreadsheet ID"
+        },
+        "webAppUrl": {
+          "type": "string",
+          "description": "Google Apps Script Deploy Web App URL"
+        }
+      },
+      "required": ["spreadsheetId", "webAppUrl"]
+    },
+    "Employee": {
+      "title": "Employee",
+      "description": "Registered employee in the system",
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": "string",
+          "description": "10-digit mobile number"
+        },
+        "name": {
+          "type": "string",
+          "description": "Full name of employee"
+        }
+      },
+      "required": ["mobile", "name"]
+    },
+    "AttendanceLog": {
+      "title": "AttendanceLog",
+      "description": "Check-in and Check-out attendance events for the day",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "employeeName": { "type": "string" },
+        "mobile": { "type": "string" },
+        "siteName": { "type": "string" },
+        "siteCode": { "type": "string" },
+        "inTime": { "type": "string" },
+        "inImage": { "type": "string" },
+        "outTime": { "type": "string" },
+        "outImage": { "type": "string" },
+        "area": { "type": "string" },
+        "pincode": { "type": "string" },
+        "state": { "type": "string" }
+      },
+      "required": ["id", "date", "employeeName", "mobile", "siteCode"]
+    }
+  },
+  "firestore": {
+    "/config/{configId}": {
+      "schema": "Config",
+      "description": "Stores the central settings"
+    },
+    "/employees/{employeeId}": {
+      "schema": "Employee",
+      "description": "Stores registered employees"
+    },
+    "/logs/{logId}": {
+      "schema": "AttendanceLog",
+      "description": "Stores attendance sheets logs"
+    }
+  }
+}

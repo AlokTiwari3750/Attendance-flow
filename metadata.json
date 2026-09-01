@@ -1,0 +1,9 @@
+{
+  "name": "AttendFlow - Web Attendance App",
+  "description": "Smart Attendance Capture system with face capture and automatic India GPS Geolocation (State, PIN Code, and Area) mapping.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
